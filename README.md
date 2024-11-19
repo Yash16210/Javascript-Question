@@ -1,7 +1,7 @@
-# My JavaScript College Practice Question
+JavaScript College Question
 
 ## What is This Project About?
-Hey! This is a JavaScript project I created for a college assignment. It's all about using JavaScript to solve some common problems. The project focuses on things like functions, loops, and arrays. The goal is to practice coding and applying JavaScript to real-world scenarios.
+Hey! This is a JavaScript Repositries I created for a college assignment. It's all about using JavaScript to solve some common problems. The project focuses on things like functions, loops, and arrays. The goal is to practice coding and applying JavaScript to real-world scenarios.
 
 ## Key Features
 - **Interactive Examples**: I’ve added some examples you can try directly in the browser.
