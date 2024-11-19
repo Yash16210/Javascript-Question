@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Background Color</title>
+  <style>
+    #box {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="box">Click Button Below!</div>
+  <button onclick="changeBackgroundColor()">Change Color</button>
+
+  <script>
+    function changeBackgroundColor() {
+      const box = document.getElementById('box');
+      const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+      box.style.backgroundColor = randomColor;
+    }
+  </script>
+
+</body>
+</html>

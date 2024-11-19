@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salary Calculator</title>
+</head>
+<body>
+
+  <h2>Salary Calculator</h2>
+  <form id="salaryForm">
+    <label for="basicSalary">Enter Basic Salary:</label><br>
+    <input type="number" id="basicSalary" placeholder="Enter your basic salary"><br><br>
+    <button type="button" onclick="calculateSalary()">Calculate</button>
+  </form>
+
+  <h3>Salary Details:</h3>
+  <p>Gross Salary: <span id="grossSalary">-</span></p>
+  <p>Net Salary: <span id="netSalary">-</span></p>
+
+  <script>
+    function calculateSalary() {
+      const basicSalary = parseFloat(document.getElementById('basicSalary').value);
+
+      if (isNaN(basicSalary) || basicSalary <= 0) {
+        alert("Please enter a valid basic salary.");
+        return;
+      }
+
+      const HRA = basicSalary * 0.18; 
+      const DA = basicSalary * 0.30; 
+      const incomeTax = 4200;
+
+      const grossSalary = basicSalary + HRA + DA;
+      const netSalary = grossSalary - incomeTax;
+
+      document.getElementById('grossSalary').textContent = `₹${grossSalary.toFixed(2)}`;
+      document.getElementById('netSalary').textContent = `₹${netSalary.toFixed(2)}`;
+    }
+  </script>
+
+</body>
+</html>

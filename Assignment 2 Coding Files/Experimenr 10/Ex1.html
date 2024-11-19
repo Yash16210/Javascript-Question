@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AngularJS Search Filter</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+
+  <div ng-controller="SearchController">
+
+    <h2>Search Filter Example</h2>
+
+    <input type="text" ng-model="searchQuery" placeholder="Search..." />
+
+    <ul>
+      <li ng-repeat="item in items | filter:searchQuery">{{ item }}</li>
+    </ul>
+
+  </div>
+
+  <script>
+    var app = angular.module('myApp', []);
+
+    app.controller('SearchController', function($scope) {
+      $scope.items = [
+        "Apple",
+        "Banana",
+        "Orange",
+        "Pineapple",
+        "Grapes",
+        "Mango",
+        "Strawberry",
+        "Blueberry"
+      ];
+
+      $scope.searchQuery = '';
+    });
+  </script>
+
+</body>
+</html>

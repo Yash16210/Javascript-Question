@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Font Style</title>
+</head>
+<body>
+
+  <p id="myParagraph">This is a sample paragraph text.</p>
+  <button onclick="modifyFontStyle()">Change Font Style</button>
+
+  <script>
+    function modifyFontStyle() {
+      const paragraph = document.getElementById("myParagraph");
+      paragraph.style.fontStyle = "italic";
+    }
+  </script>
+
+</body>
+</html>

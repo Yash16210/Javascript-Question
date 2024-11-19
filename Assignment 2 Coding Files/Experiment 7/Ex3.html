@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Registration Form</title>
+  <style>
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Course Registration Form</h2>
+  <form id="registrationForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="phone">Phone:</label><br>
+    <input type="text" id="phone" name="phone"><br><br>
+
+    <label for="course">Select Course:</label><br>
+    <select id="course" name="course">
+      <option value="">--Select a course--</option>
+      <option value="web">Web Development</option>
+      <option value="data">Data Science</option>
+      <option value="design">Graphic Design</option>
+    </select><br><br>
+
+    <button type="button" onclick="validateForm()">Register</button>
+    <p id="errorMessage" class="error"></p>
+  </form>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const course = document.getElementById('course').value;
+      const errorMessage = document.getElementById('errorMessage');
+
+      errorMessage.textContent = ''; // Clear previous errors
+
+      if (!name) {
+        errorMessage.textContent = 'Name is required.';
+        return;
+      }
+
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!email || !emailPattern.test(email)) {
+        errorMessage.textContent = 'Please enter a valid email address.';
+        return;
+      }
+
+      const phonePattern = /^\d{10}$/;
+      if (!phone || !phonePattern.test(phone)) {
+        errorMessage.textContent = 'Please enter a valid 10-digit phone number.';
+        return;
+      }
+
+      if (!course) {
+        errorMessage.textContent = 'Please select a course.';
+        return;
+      }
+
+      alert('Registration successful!');
+    }
+  </script>
+
+</body>
+</html>

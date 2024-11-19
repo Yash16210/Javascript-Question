@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slideshow</title>
+  <style>
+    #slideshow {
+      text-align: center;
+      margin-top: 50px;
+    }
+    #slideshow img {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+    }
+    #slideshow button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="slideshow">
+  <button onclick="showPreviousImage()">Previous</button>
+  <img id="slideshowImage" src="https://c.ndtvimg.com/2024-04/utqtdga8_virat-kohli-bcci_625x300_07_April_24.jpg?im=FeatureCrop,algorithm=dnn,width=806,height=605" alt="Slideshow Image">
+  <button onclick="showNextImage()">Next</button>
+</div>
+
+<script>
+  const images = [
+    'https://c.ndtvimg.com/2024-04/utqtdga8_virat-kohli-bcci_625x300_07_April_24.jpg?im=FeatureCrop,algorithm=dnn,width=806,height=605', 
+    'https://www.hindustantimes.com/ht-img/img/2024/04/06/1600x900/ANI-20240406314-0_1712419764209_1712419798115.jpg', 
+    'https://static.abplive.com/wp-content/uploads/2020/08/03154713/King-Kohli.jpg', 
+    'https://c.ndtvimg.com/2024-04/utqtdga8_virat-kohli-bcci_625x300_07_April_24.jpg?im=FeatureCrop,algorithm=dnn,width=806,height=605.jpg'
+  ];
+
+  let currentIndex = 0;
+
+  function showNextImage() {
+    currentIndex = (currentIndex + 1) % images.length; // Loop to the start
+    document.getElementById('slideshowImage').src = images[currentIndex];
+  }
+
+  function showPreviousImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop to the end
+    document.getElementById('slideshowImage').src = images[currentIndex];
+  }
+</script>
+
+</body>
+</html>

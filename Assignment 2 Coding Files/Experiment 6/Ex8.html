@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown from 1 to 1000</title>
+</head>
+<body>
+
+  <label for="numberDropdown">Select a number:</label>
+  <select id="numberDropdown"></select>
+
+  <script>
+    const select = document.getElementById('numberDropdown');
+
+    for (let i = 1; i <= 1000; i++) {
+      const option = document.createElement('option');
+      option.value = i;
+      option.textContent = i;
+      select.appendChild(option);
+    }
+  </script>
+
+</body>
+</html>

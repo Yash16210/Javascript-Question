@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display All Tags</title>
+</head>
+<body>
+
+  <h1>Sample Page</h1>
+  <p>This is a sample paragraph.</p>
+  <div>
+    <p>Another paragraph inside a div.</p>
+    <span>Some text inside a span.</span>
+  </div>
+
+  <button onclick="displayTags()">Display All Tags</button>
+
+  <script>
+    function displayTags() {
+      const tags = document.getElementsByTagName('*');
+      const tagNames = [];
+
+      for (let i = 0; i < tags.length; i++) {
+        tagNames.push(tags[i].tagName);
+      }
+
+      alert(`All tags used on the page: \n${[...new Set(tagNames)].join('\n')}`);
+    }
+  </script>
+
+</body>
+</html>

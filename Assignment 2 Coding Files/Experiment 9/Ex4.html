@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOM Example</title>
+</head>
+<body>
+
+  <h1>Browser Object Model (BOM) Demonstration</h1>
+  
+  <button onclick="windowAlert()">Show Alert</button>
+  <button onclick="getWindowSize()">Get Window Size</button>
+  <button onclick="openNewWindow()">Open New Window</button>
+  <button onclick="displayBrowserInfo()">Display Browser Info</button>
+  <button onclick="navigateHistory()">Go Back in History</button>
+
+  <script>
+    function windowAlert() {
+      alert("This is an alert using BOM's Window object!");
+    }
+
+    function getWindowSize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      alert(`Window size: Width = ${width}px, Height = ${height}px`);
+    }
+
+    function openNewWindow() {
+      window.open("https://www.example.com", "_blank", "width=600,height=400");
+    }
+
+    function displayBrowserInfo() {
+      const browserInfo = `Browser Name: ${navigator.appName}\n` +
+                          `Browser Version: ${navigator.appVersion}\n` +
+                          `Platform: ${navigator.platform}`;
+      alert(browserInfo);
+    }
+
+    function navigateHistory() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>
